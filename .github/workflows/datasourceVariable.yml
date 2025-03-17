@@ -1,0 +1,24 @@
+name: Test Database Password Variable
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test-variable:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set environment variable for Spring DataSource password
+      run: echo "SPRING_DATASOURCE_PASSWORD=${{ secrets.SENHA_DO_BANCO_SUPABASE_JOGO_DA_VELHA }}" >> $GITHUB_ENV
+
+    - name: Echo environment variable
+      run: echo "SPRING_DATASOURCE_PASSWORD is $SPRING_DATASOURCE_PASSWORD"
