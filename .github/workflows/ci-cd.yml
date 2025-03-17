@@ -26,7 +26,8 @@ jobs:
     - name: Build with Maven
       run: |
         cd backend
-        mvn clean install -DskipTests
+        mvn clean install -Dspring.main.web-application-type=none -DskipTests
+        # mvn clean install -DskipTests
 
     - name: Run tests
       run: |
