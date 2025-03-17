@@ -23,6 +23,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Set environment variables
+      run: echo "SPRING_DATASOURCE_PASSWORD=${{ secrets.SENHA_DO_BANCO_SUPABASE_JOGO_DA_VELHA }}" >> $GITHUB_ENV
+
     - name: Build with Maven
       run: |
         cd backend
