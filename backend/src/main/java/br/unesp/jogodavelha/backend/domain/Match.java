@@ -10,7 +10,7 @@ public class Match {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Integer id;
+    private Long id;
 
     private Instant dateTime;
 

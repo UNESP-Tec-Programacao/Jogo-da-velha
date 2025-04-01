@@ -8,7 +8,7 @@ public class MatchPlayer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @OneToOne
     private Player player1;
