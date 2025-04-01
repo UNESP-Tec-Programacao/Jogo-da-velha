@@ -19,6 +19,7 @@ public class Person {
     private String name;
 
     @Getter @Setter
+    @Column(unique = true)
     private String mail;
 
     @Getter @Setter
