@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Table
 @Entity
 @Data
@@ -12,20 +13,20 @@ public class Person {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Getter @Setter
+    @Setter
     private Long id;
 
-    @Getter @Setter
+    @Setter
     private String name;
 
-    @Getter @Setter
+    @Setter
     @Column(unique = true)
     private String mail;
 
-    @Getter @Setter
+    @Setter
     private int age;
 
-    @Getter @Setter
+    @Setter
     private String country;
 
     public Person(){}
