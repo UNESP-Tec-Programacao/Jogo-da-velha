@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class PersonService {
+
     private final PersonRespository personRespository;
 
     public PersonService(PersonRespository personRespository) {
@@ -17,7 +18,11 @@ public class PersonService {
     }
 
     public List<Person> list(){
-        return this.personRespository.findAll();
+        List<Person> people = this.personRespository.findAll();
+        if(people.isEmpty()){
+            throw new PersonException("People list has empty");
+        }
+        return people;
     }
 
     public Optional<Person> find(Person person){
